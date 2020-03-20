@@ -1,0 +1,19 @@
+cd /d C:\grub-2.02-for-windows
+
+
+Cài đặt Grub2 cho BIOS (i386-pc):
+
+grub-install.exe --boot-directory=G: --target=i386-pc //./PHYSICALDRIVE2
+
+    Số 2 ở lệnh trên là số của đĩa cứng mà chúng ta đã kiểm tra ở bước 2.
+    G: là ổ đĩa của một trong các phân vùng của đĩa cứng ở trên.
+
+Cài đặt Grub2 cho UEFI 64-bit (x86_64-efi):
+
+grub-install.exe --boot-directory=G: --efi-directory=G: --removable --target=x86_64-efi
+
+Cài đặt Grub2 cho UEFI 32-bit (i386-efi):
+
+grub-install.exe --boot-directory=G: --efi-directory=G: --removable --target=i386-efi
+
+Đối với UEFI, bạn cần phải chỉ định một ổ đĩa của phân vùng FAT32 ở tham số –efi-directory. Nếu nó không hỗ trợ UEFI, Grub2 sẽ thông báo một lỗi: grub-install.exe: error: F: doesn’t look like an EFI partition.
